@@ -1,0 +1,9 @@
+.bg-bandeau {
+  background-image: url(../img/bandeau.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  & > div {
+      background: rgba(255, 255, 255, 0.7);
+  }
+}
