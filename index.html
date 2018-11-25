@@ -1,4 +1,10 @@
 ---
+collaborateurs:
+  Territori, Fabien Charlot: Paysagiste, VRD
+  Cécile Lamarque: Sociologue
+  Cabinet Thibaud: Avocate
+  Cabinet Lugol Architecte: Architecte du Patrimoine
+  Écotone, Maison de la Découverte Pyrénéeenne, Biotope: Inventaires naturalistes, trame verte et bleue, biodiversité
 ---
 
 <!DOCTYPE html>
@@ -6,7 +12,7 @@
   <title>TADD </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
-  <link rel="stylesheet" href="{% link css/main.scss %}"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}{% link css/main.scss %}"/>
   <style>
     @media screen and (min-width: 30em) {
       .dg-ns {
@@ -70,16 +76,19 @@
           </h1>
           <div class="dg-ns" style="grid-template-columns:1fr 1fr 1fr;grid-gap:20px 20px">
             <div class="mt0-ns mt3">
+              <img src="{{ site.baseurl }}{% link img/ecosystem.png %}" alt="">
               <span class="b">Documents de planification</span> : Plan Local d’Urbanisme (PLU) communal ou
               intercommunal (élaboration, révision, modification), carte communale, Schéma
               de Cohérence Territorial (SCoT),&hellip;
             </div>
             <div class="mt0-ns mt3">
+              <img src="{{ site.baseurl }}{% link img/people.png %}" alt="">
               Mise en place de moyens de <span class="b">concertation</span> innovants :
               affiches, réunions publics,
               visites « guidées », ateliers de travail, outils « en ligne »,...
             </div>
             <div class="mt0-ns mt3">
+              <img src="{{ site.baseurl }}{% link img/environnement.png %}" alt="">
               <span class="b">Prospective territoriale</span> :
               charte de territoire, Projet d’Aménagement et de
               Développement Durable (PADD) communal ou intercommunal,i &hellip;
@@ -169,8 +178,14 @@
             </div>
           </div>
           <div>
-            En fonction des besoins, T.A.D.D. s’associe aussi avec TERRITORI, REPERAGE URBAIN, CABINET THIBAUD,
-            CABINET LUGOL ARCHITECTE, Maison de la découverte pyrénéenne, ECOTONE
+            <p class="fw1">
+            En fonction des besoins, T.A.D.D. s’associe aussi avec :
+            </p>
+            <ul class="list fw6">
+              {% for col in page.collaborateurs %}
+              <li>{{ col[0] }} <em class="fw1">({{ col[1]}})</em></li>
+              {% endfor %}
+            </dl>
           </div>
         </div>
       </div>
@@ -218,6 +233,14 @@
             </div>
           </address>
         </div>
+      </div>
+      <div class="mw7 center tc pt4 fw1">
+        <small>
+          Attribution des images :
+          <a href="https://fr.freepik.com/vecteurs-libre/concept-d-39-ecosysteme-avec-la-ville_2739756.htm">Designed by Freepik</a>
+          <a href="https://fr.freepik.com/vecteurs-libre/icones-de-l-39-environnement-vert_901726.htm">Designed by Dooder</a>
+          <a href="https://fr.freepik.com/vecteurs-libre/illustration-de-gens-d-39-affaires_3415156.htm">Designed by Rawpixel.com</a>
+        </small>
       </div>
     </main>
   </body>
